@@ -1,11 +1,11 @@
 #include <stdio.h>
 
-// DeclaraÁ„o das Variaveis
+// Declara√ß√£o das Variaveis
 
 int inicioAno; int anoBissexto;
 
 // ###############################
-// ### DeclaraÁ„o das funÁıes ###
+// ### Declara√ß√£o das fun√ß√µes ###
 // Funcao para 1o de Janeiro
 void perguntaPrimeiroDiaJaneiro(){
     printf("Qual e o dia da semana em 1o de Janeiro:");
@@ -15,21 +15,23 @@ void perguntaPrimeiroDiaJaneiro(){
 
 // ########################
 // Funcao para Ano Bissexto    
-void perguntaAnoBissexto(){
+int perguntaAnoBissexto(){
     printf("\n\nO ano atual e Bissexto ?");
     printf("\n1- SIM\n2- NAO\n\nRESPOSTA= ");
     scanf("%d", &anoBissexto);
-}
-
-// ######################
-void imprimeVariaveis(){
-	printf("\n\n\nDIA-Do-ANO = %d\nBissexto = %d\n\n\n",inicioAno,anoBissexto);
+    
+    if(anoBissexto==1)
+    return 29;
+    if(anoBissexto==2)
+    return 28;
+    else
+    exit(0);
+    
 }
 
 
 // #################
 mostrarCalendario(){
-	printf("\nMOSTRAR CALENDARIO!\n");
 }
 
 // ##################
@@ -50,28 +52,26 @@ inserirAgendamento(){
 
 // ###################
 mostrarAgendamentos(){
-	printf("\nMOSTRAR AGENDAMENTO!\n");
 }
 	
 // ##################
 // PROGRAMA PRINCIPAL
 int main(){
 
-    // DeclaraÁ„o das vari·veis est·ticas
+    // Declara√ß√£o das vari√°veis est√°ticas
     int ANO[386];
     int MES[13]={0,31,29,31,30,31,30,31,31,30,31,30,31};
 
 	perguntaPrimeiroDiaJaneiro();
-	perguntaAnoBissexto();
+	MES[2]=perguntaAnoBissexto();
 	
 	int i;
 	while(i!=4){
-	printf("### MENU ###");
+	printf("#####  MENU  #####");
 	printf("\n1) MOSTRAR O CALENDARIO");
 	printf("\n2) INSERIR AGENDAMENTO");
 	printf("\n3) MOSTRAR AGENDAMENTOS");
 	printf("\n4) SAIR\n");
-	printf("\n5) IMPRIMIR AS VARIAVEIS AGORA!\n");
 	scanf("%d",&i);
 	
 	if(i==1)
@@ -83,14 +83,10 @@ int main(){
 	
 	if(i==4)
 	return 0;
-	
-	if(i==5)
-	imprimeVariaveis();
 			
 	}
 
 	return 0;
 }
-
 
 
