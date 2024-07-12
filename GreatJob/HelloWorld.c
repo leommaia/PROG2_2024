@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-// Função para chamar um "Hello World"
+// FunÃ§Ã£o para chamar um "Hello World"
 
 void imprimeTexto();
 
